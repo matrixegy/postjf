@@ -1,5 +1,4 @@
 <!-- YouTube API Integration (for Playlist Embedding) -->
-<script>
     // Load the YouTube API script
     function loadYouTubeAPI() {
         var script = document.createElement('script');
@@ -34,4 +33,3 @@
     }
 
     loadYouTubeAPI();
-</script>
