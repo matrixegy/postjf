@@ -12,17 +12,15 @@
 
     .app-links {
       list-style-type: none;
-      padding: 0;
-            justify-content: center;  /* محاذاة المحتوى أفقيًا */
-  align-items: center;   
+      padding: 0; 
     }
 
     .app-links li {
       display: none;
       margin: 10px 0;
       display: flex;
-      align-items: center;
-    }
+            justify-content: center;  /* محاذاة المحتوى أفقيًا */
+      }
 
     .app-links a {
       text-decoration: none;
