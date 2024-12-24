@@ -3,8 +3,6 @@
       margin: 20px;
         text-align: center;  
       display: flex;
-
-      
     }
 
     .app-container-title {
@@ -12,8 +10,9 @@
       font-weight: bold;
       margin-bottom: 10px;
                   text-align: center;
-      display: flex;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
     }
 
     .app-links {
