@@ -1,0 +1,35 @@
+{
+  "links": [
+    {
+      "href": "intent://com.google.android.gms/#Intent;scheme=promote_smartlock_scheme;end",
+      "img": "https://addrom.com/wp-content/uploads/2022/07/screen-smartlock.png",
+      "alt": "Screen Smartlock",
+      "text": "Screen Smartlock"
+    },
+    {
+      "href": "intent://com.android.settings/#Intent;scheme=android-app;end",
+      "img": "https://addrom.com/wp-content/uploads/2022/07/settings.png",
+      "alt": "Setting App",
+      "text": "Setting"
+    },
+    {
+      "href": "intent://com.sec.android.app.samsungapps/#Intent;scheme=android-app;end",
+      "img": "https://addrom.com/wp-content/uploads/2022/07/galaxy-store.png",
+      "alt": "Galaxy Store",
+      "text": "Galaxy Store"
+    },
+    {
+      "href": "https://m.palmplaystore.com/#category=HOME#subCategory=",
+      "img": "https://www.theunlockpro.com/wp-content/uploads/al_opt_content/IMAGE/www.theunlockpro.com/wp-content/uploads/2024/07/Czczcc-300x300.png.bv_resized_mobile.png.bv.webp",
+      "alt": "Palm Store",
+      "text": "Palm Store"
+    },
+    {
+      "href": "tel:100-000-000/#Intent;scheme=android-app;end",
+      "img": "https://addrom.com/wp-content/uploads/2022/07/dialer-call.png",
+      "alt": "Call",
+      "text": "(*#0*#) Sam/Tecno/Infinix"
+    }
+    // أضف المزيد من الروابط هنا
+  ]
+}
