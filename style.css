@@ -54,3 +54,35 @@
     .load-more-btn:focus {
       outline: none;
     }
+.table-of-contents {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .table-of-contents h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+  }
+
+  .table-of-contents ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .table-of-contents ul li {
+    margin: 10px 0;
+  }
+
+  .table-of-contents ul li a {
+    text-decoration: none;
+    color: #0073e6;
+    font-size: 18px;
+  }
+
+  .table-of-contents ul li a:hover {
+    text-decoration: underline;
+  }
