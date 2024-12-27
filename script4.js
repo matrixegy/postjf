@@ -1,35 +1,68 @@
 <!-- YouTube API Integration (for Playlist Embedding) -->
-    // Load the YouTube API script
-    function loadYouTubeAPI() {
-        var script = document.createElement('script');
-        script.src = 'https://www.youtube.com/iframe_api';
-        document.body.appendChild(script);
+    // Facade Class for YouTube Integration
+class YouTubeFacade {
+    constructor() {
+        this.apiLoaded = false;
+        this.initAPI();
     }
 
-    function onYouTubeIframeAPIReady() {
-        // Playlist 1
-        new YT.Player('playlist-1', {
-            height: '450',
-            width: '800',
-            videoId: 'PLF455eDxW-jD1Ko5O_FDc4NV5yNepMmer', // Playlist ID 1
-            playerVars: {
-                listType: 'playlist',
-                list: 'PLF455eDxW-jD1Ko5O_FDc4NV5yNepMmer',
-                autoplay: 0
-            }
-        });
-
-        // Playlist 2
-        new YT.Player('playlist-2', {
-            height: '450',
-            width: '800',
-            videoId: 'PLF455eDxW-jDgZ38GjcolMVZyXazV31H4', // Playlist ID 2
-            playerVars: {
-                listType: 'playlist',
-                list: 'PLF455eDxW-jDgZ38GjcolMVZyXazV31H4',
-                autoplay: 0
-            }
-        });
+    initAPI() {
+        if (!this.apiLoaded) {
+            const script = document.createElement('script');
+            script.src = 'https://www.youtube.com/iframe_api';
+            script.onload = () => {
+                this.apiLoaded = true;
+                if (typeof onYouTubeIframeAPIReady === 'function') {
+                    onYouTubeIframeAPIReady();
+                }
+            };
+            document.body.appendChild(script);
+        }
     }
 
-    loadYouTubeAPI();
+    createPlaylist(playerId, playlistId, options = {}) {
+        if (!this.apiLoaded) {
+            console.error('YouTube API is not loaded yet.');
+            return;
+        }
+
+        new YT.Player(playerId, {
+            height: options.height || '450',
+            width: options.width || '800',
+            videoId: playlistId,
+            playerVars: {
+                listType: 'playlist',
+                list: playlistId,
+                autoplay: options.autoplay || 0,
+                ...options.playerVars,
+            },
+        });
+    }
+}
+
+// Facade Instance
+const youtubeFacade = new YouTubeFacade();
+
+// Define YouTube API Ready function (required by the API)
+function onYouTubeIframeAPIReady() {
+    youtubeFacade.createPlaylist('playlist-1', 'PLF455eDxW-jD1Ko5O_FDc4NV5yNepMmer');
+    youtubeFacade.createPlaylist('playlist-2', 'PLF455eDxW-jDgZ38GjcolMVZyXazV31H4');
+}
+
+// HTML (Simplified and Organized)
+const htmlContent = `
+    <p class="call-to-action">
+        💡 LIKE, COMMENT, and SUBSCRIBE for more helpful tutorials!
+    </p>
+    <a href="https://www.youtube.com/@MxEgyFRP" class="subscribe-link">
+        📲 Subscribe to our channel for more tutorials | اشترك في القناة لمزيد من الدروس
+    </a>
+    <div id="playlist-1"></div>
+    <div id="playlist-2"></div>
+`;
+
+// Inject HTML into the DOM
+const container = document.getElementById('app'); // Assuming there is a div with id 'app'
+if (container) {
+    container.innerHTML = htmlContent;
+}
