@@ -1,5 +1,4 @@
-<!-- YouTube API Integration (for Playlist Embedding) -->
-   // Facade Class for YouTube Integration
+// Facade Class for YouTube Integration
 class YouTubeFacade {
     constructor() {
         this.apiLoaded = false;
@@ -67,6 +66,4 @@ const htmlContent = `
 const container = document.getElementById('app'); // Assuming there is a div with id 'app'
 if (container) {
     container.innerHTML = htmlContent;
-}
-
 }
