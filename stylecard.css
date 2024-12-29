@@ -69,17 +69,20 @@ footer {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  width: 80%;  /* تحديد العرض */
-  max-width: 800px; /* الحد الأقصى للعرض */
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh; /* تحديد أقصى ارتفاع */
+  overflow-y: auto; /* إضافة شريط تمرير عمودي */
   text-align: center;
-  margin: 20px; /* إضافة المسافة حول النافذة */
+  margin: 20px;
 }
 .popup .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
+  position: fixed; /* تثبيت الزر */
+  top: 10%;
+  right: 10%;
   font-size: 24px;
   cursor: pointer;
+  z-index: 10000; /* ضمان بقاء الزر فوق كل شيء */
 }
 
 /* سلايدر */
@@ -118,7 +121,6 @@ footer {
 .prev:hover, .next:hover {
   background-color: #0056b3;
 }
-
 /* استجابة للأحجام المختلفة للشاشة */
 @media (max-width: 768px) {
   .card {
@@ -126,5 +128,10 @@ footer {
   }
   .popup-content {
     width: 95%;
+    max-height: 70vh; /* تقليل الارتفاع للشاشات الصغيرة */
+  }
+  .popup .close {
+    top: 5%;
+    right: 5%;
   }
 }
