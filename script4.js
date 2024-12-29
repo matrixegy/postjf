@@ -1,4 +1,4 @@
-// Facade Class for YouTube Integration with Lazy Loading
+// Facade Class for YouTube Integration
 class YouTubeFacade {
     constructor() {
         this.apiLoaded = false;
@@ -42,26 +42,14 @@ class YouTubeFacade {
 // Facade Instance
 const youtubeFacade = new YouTubeFacade();
 
-// Define YouTube API Ready function
+// Define YouTube API Ready function (required by the API)
 function onYouTubeIframeAPIReady() {
     youtubeFacade.createPlaylist('playlist-1', 'PLF455eDxW-jD1Ko5O_FDc4NV5yNepMmer');
     youtubeFacade.createPlaylist('playlist-2', 'PLF455eDxW-jDgZ38GjcolMVZyXazV31H4');
 }
 
-// IntersectionObserver to load the YouTube player only when in view
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const playerId = entry.target.id;
-            const playlistId = entry.target.getAttribute('data-playlist-id');
-            youtubeFacade.createPlaylist(playerId, playlistId);
-            observer.unobserve(entry.target); // Stop observing once loaded
-        }
-    });
-}, { threshold: 0.5 }); // Load when 50% of the element is visible
-
-// HTML with data attributes for lazy loading
-const htmlContent = `
+// HTML (Simplified and Organized)
+const htmlContent = 
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
         <p class="call-to-action" style="text-align: center;">
             💡 LIKE, COMMENT, and SUBSCRIBE for more helpful tutorials!
@@ -69,14 +57,13 @@ const htmlContent = `
         <a href="https://www.youtube.com/@MxEgyFRP" class="subscribe-link" style="margin-bottom: 20px; text-align: center;">
             📲 Subscribe to our channel for more tutorials | اشترك في القناة لمزيد من الدروس
         </a>
-        <div id="playlist-1" data-playlist-id="PLF455eDxW-jD1Ko5O_FDc4NV5yNepMmer" style="margin-bottom: 20px;"></div>
-        <div id="playlist-2" data-playlist-id="PLF455eDxW-jDgZ38GjcolMVZyXazV31H4"></div>
+        <div id="playlist-1" style="margin-bottom: 20px;"></div>
+        <div id="playlist-2"></div>
     </div>
-`;
+;
 
 // Inject HTML into the DOM
-const container = document.getElementById('app');
+const container = document.getElementById('app'); // Assuming there is a div with id 'app'
 if (container) {
-    container.innerHTML = htmlContent;
+    container.innerHTML = htmlContent}
 
-}
