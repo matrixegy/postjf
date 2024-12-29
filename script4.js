@@ -100,7 +100,7 @@
                         observer.unobserve(container);
                     }
                 });
-            }, { threshold: 0.5 }); // Load when 50% visible
+            }, { threshold: 0.4 }); // Load when 50% visible
 
             // Observe all playlist containers
             document.querySelectorAll('[data-playlist-id]').forEach((element) => {
