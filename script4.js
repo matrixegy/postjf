@@ -79,8 +79,4 @@ const container = document.getElementById('app');
 if (container) {
     container.innerHTML = htmlContent;
 
-    // Start observing the YouTube embed elements for lazy loading
-    document.querySelectorAll('[id^="playlist-"]').forEach((element) => {
-        observer.observe(element);
-    });
 }
