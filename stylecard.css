@@ -4,7 +4,7 @@
 .team-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: 20px;
   justify-content: center;
   margin-top: 30px; /* تعديل المسافة الرأسية */
 }
