@@ -77,7 +77,7 @@ footer {
   margin: 20px;
 }
 .popup .close {
-  position: fixed; /* تثبيت الزر */
+  position: absolute;  /* تثبيت الزر */
 top: 10px; 
   right: 15px;
   font-size: 24px;
