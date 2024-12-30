@@ -39,15 +39,18 @@ footer {
 .contact-icons a {
   display: inline-block;
   margin: 5px;
-  font-size: 18px;
-  text-decoration: none;
+  font-size: 24px; /* زيادة حجم الأيقونات */
   color: #007bff;
+  text-decoration: none;
 }
+
 .contact-icons a:hover {
   color: #0056b3;
 }
+
 .contact-icons a i {
-  margin-right: 8px;
+  margin-right: 0; /* إزالة المسافة بين الأيقونة والنص */
+  font-size: 30px; /* تغيير حجم الأيقونات */
 }
 
 /* النوافذ المنبثقة */
