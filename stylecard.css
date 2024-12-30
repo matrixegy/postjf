@@ -78,8 +78,8 @@ footer {
 }
 .popup .close {
   position: fixed; /* تثبيت الزر */
-  top: 10%;
-  right: 10%;
+top: 10px; 
+  right: 15px;
   font-size: 24px;
   cursor: pointer;
   z-index: 10000; /* ضمان بقاء الزر فوق كل شيء */
