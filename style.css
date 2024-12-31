@@ -13,4 +13,5 @@
     }
     .app-links a {
       text-decoration: none;
+          display: flex;
     }
