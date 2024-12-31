@@ -4,3 +4,7 @@
             text-align: center;
     }
 
+.app-links {
+      list-style-type: none;
+      padding: 0; 
+    }
