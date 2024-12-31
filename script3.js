@@ -208,10 +208,8 @@
 // دالة لعرض العناصر
 function showItems(startIndex, count) {
   const appLinksContainer = document.getElementById('appLinks');
-  // مسح المحتوى السابق
-  appLinksContainer.innerHTML = '';
+  const fragment = document.createDocumentFragment();  // استخدام fragment لتقليل عمليات DOM
 
-  // إضافة العناصر الجديدة
   let countDisplayed = 0;  // عدد العناصر المعروضة
   let index = startIndex;
 
@@ -235,11 +233,13 @@ function showItems(startIndex, count) {
     anchor.appendChild(image);
     anchor.appendChild(strong);
     listItem.appendChild(anchor);
-    appLinksContainer.appendChild(listItem);
+    fragment.appendChild(listItem);  // إضافة العنصر إلى fragment بدلاً من DOM مباشرة
 
     index++;  // تحديث المؤشر
     countDisplayed++;  // زيادة عدد العناصر المعروضة
   }
+
+  appLinksContainer.appendChild(fragment);  // إضافة كافة العناصر دفعة واحدة
 }
 
 // عند الضغط على "Load More"
@@ -249,4 +249,4 @@ loadMoreBtn.addEventListener('click', () => {
 });
 
 // إظهار أول 9 عناصر عند تحميل الصفحة
-showItems(currentIndex, itemsPerPage);;
+showItems(currentIndex, itemsPerPage);
