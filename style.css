@@ -11,3 +11,8 @@
    .app-links img {
       margin-right: 10px;
     }
+    .app-links a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
