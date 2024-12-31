@@ -1,7 +1,6 @@
   // دمج جميع السكربتات في السكربت الواحد.
   const scripts = [
     { src: "https://matrixegy.github.io/postjf/script5.js", id: "script5" },
-    { src: "https://matrixegy.github.io/postjf/script4.js", id: "script4" },
     { src: "https://matrixegy.github.io/postjf/script3.js", id: "script3" },
     { src: "https://matrixegy.github.io/postjf/script1.js", id: "script1" }
   ];
