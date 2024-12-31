@@ -17,5 +17,5 @@ align-items: center;
     }
 .app-links li {
    
-            justify-content: center;  /* محاذاة المحتوى أفقيًا */
+  display: flex; /* وضع المحتوى في خط واحد */
       }
