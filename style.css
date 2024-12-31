@@ -66,3 +66,42 @@
     width: 100%; /* Stack categories on smaller screens */
   }
 }
+.custom-tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .custom-tool-link {
+    display: block;
+    background-color: #f3f3f3;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: #0073e6;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-tool-link:hover {
+    background-color: #0073e6;
+    color: white;
+  }
+
+  .custom-load-more-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #0073e6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-load-more-button:hover {
+    background-color: #005bb5;
+  }
