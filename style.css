@@ -15,3 +15,7 @@
       text-decoration: none;
 align-items: center;
     }
+.app-links li {
+   
+            justify-content: center;  /* محاذاة المحتوى أفقيًا */
+      }
