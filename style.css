@@ -1,21 +1,26 @@
-.app-container {
+    .app-container {
       font-family: Arial, sans-serif;
       margin: 20px;
             text-align: center;
     }
-
-.app-links {
+    .app-links {
       list-style-type: none;
       padding: 0; 
     }
-   .app-links img {
-      margin-right: 10px;
-    }
+
+    .app-links li {
+      display: none;
+      margin: 10px 0;
+      display: flex;
+            justify-content: center;  /* محاذاة المحتوى أفقيًا */
+      }
+
     .app-links a {
       text-decoration: none;
-align-items: center;
+      display: flex;
+      align-items: center;
     }
-.app-links li {
-   
-  display: flex; /* وضع المحتوى في خط واحد */
-      }
+
+    .app-links img {
+      margin-right: 10px;
+    }
