@@ -8,3 +8,6 @@
       list-style-type: none;
       padding: 0; 
     }
+   .app-links img {
+      margin-right: 10px;
+    }
