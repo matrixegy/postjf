@@ -24,7 +24,7 @@
     },
     {
       href: "https://m.palmplaystore.com/#category=HOME#subCategory=",
-      imgSrc: "https://www.theunlockpro.com/wp-content/uploads/al_opt_content/IMAGE/www.theunlockpro.com/wp-content/uploads/2024/07/Czczcc-300x300.png.bv_resized_mobile.png.bv.webp",
+      imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735690457/Czczcc-300x300.png.bv_resized_mobile.png.bv_30x30_a2exqs.webp",
       alt: "Palm Store",
       name: "Palm Store"
     },
@@ -48,67 +48,67 @@
     },
     {
       href: "intent://com.sec.android.app.servicemodeapp/#Intent;scheme=promote_USBSettings_scheme;end",
-      imgSrc: "https://easy-firmware.com/efrp/downloads/frp/images/usb.png",
+      imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735690660/usb_30x30_1_nz2veb.png",
       alt: "usb Setting",
       name: "usb Setting"
     },
     {
       href: "intent://com.splashtop.streamer.addon.knox/#Intent;scheme=android-app;end",
-      imgSrc: "https://easy-firmware.com/efrp/downloads/frp/images/Splashtop.png",
+      imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735690788/Splashtop_40x40_1_rfqjfw.webp",
       alt: "Splashtop",
       name: "Splashtop"
     },
   {
     href: "samsungapps://ProductDetail/com.infinix.xshare",
-    imgSrc: "https://easy-firmware.com/efrp/downloads/frp/images/Xshare.png",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735690896/Xshare_40x40_hs9hxp.webp",
     alt: "Xshare",
     name: "Xshare samsung"
   },
   {
     href: "samsungapps://ProductDetail/com.activitymanager",
-    imgSrc: "https://easy-firmware.com/efrp/downloads/frp/images/ActivityManager.png",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735691023/ActivityManager_40x40_zt3pnh.webp",
     alt: "activitymanager",
     name: "activitymanager sam"
   },
   {
     href: "intent://com.vivo.easyshare/#Intent;scheme=android-app;end",
-    imgSrc: "https://img.apponic.com/19/237/f4918f9bc9a222802eeb16e5cd418638.png",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735691090/f4918f9bc9a222802eeb16e5cd418638_40x40_wwdqho.webp",
     alt: "Vivo EasyShare",
     name: "Vivo EasyShare"
   },
   {
     href: "intent://com.google.android.apps.maps/#Intent;scheme=android-app;end",
-    imgSrc: "https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735691496/Google_Maps_icon_2015-2020.svg_1_40x40_kypwry.webp",
     alt: "Google Maps",
     name: "Google Maps"
   },
   {
     href: "intent://com.knox.verification.gettingstarted/#Intent;scheme=android-app;end",
-    imgSrc: "https://easy-firmware.com/efrp/downloads/frp/images/Package_Disabler.png",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735691578/Package_Disabler_1_40x40_udjbm0.webp",
     alt: "knox verification",
     name: "knox verification"
   },
   {
     href: "https://apps.samsung.com/appquery/appDetail.as?appId=com.jami.tool.hiddensetting.other",
-    imgSrc: "https://m.apkshub.com/images/42/com.jami.tool.hiddensetting/icon.png",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735691657/icon_1_40x40_l0swik.webp",
     alt: "hidden settings",
     name: "hidden settings SAM"
   },
   {
     href: "https://galaxystore.samsung.com/detail/org.aospstudio.files",
-    imgSrc: "https://blogger.googleusercontent.com/img/a/AVvXsEhl2cxHmhVQxNWmxQ7u5pHwTemNrP1BHK7DLlUtn-V4Oe3W9Yn8BLAj1zllSIjhodQ8WzC2WBv_zg7_CHl9eBWoRnwBS7kul3wK9GGrGSUnhiY2Sg8cTQXdmc3FrDjZD6OtHodNZF3jz6M52UQixrWWaUQIOew-ur-4NF2b2u2yAvHuJZWSp9UQWc_F=s0-rw-e90",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735691754/Files_Shortcut_1_40x40_oebxxg.webp",
     alt: "Files Shortcut",
     name: "Files Shortcut"
   },
   {
     href: "intent://com.miui.home/#Intent;scheme=android-app;end",
-    imgSrc: "https://static.wikia.nocookie.net/logopedia/images/0/0f/MIUI_2012_logo.jpg/revision/latest?cb=20210508035338",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735691851/MIUI_2012_logo_1_40x40_zyktjd.webp",
     alt: "MIUI Home",
     name: "MIUI Home"
   },
   {
     href: "intent://com.samsung.knox.securefolder/#Intent;scheme=android-app;end",
-    imgSrc: "https://downloadr2.apkmirror.com/wp-content/uploads/2024/01/86/65b0f7ec75970_com.samsung.knox.securefolder.png",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735691978/65b0f7ec75970_com.samsung.knox.securefolder_40x40_viss7u.webp",
     alt: "Secure Folder",
     name: "Secure Folder"
   },
@@ -126,7 +126,7 @@
   },
   {
     href: "https://www.google.com/android/find",
-    imgSrc: "https://play-lh.googleusercontent.com/GCsSBgR93cedwf2weP7s6VPsBitwir9ioOO0DYjLydIjdCkfQEv0GQzK34ky96L6XMc=w600-h300-pc0xffffff-pd",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735692185/unnamed_2_40x40_k64st3.webp",
     alt: "Find My Device Google",
     name: "Find My Device Google"
   },
@@ -150,7 +150,7 @@
   },
   {
     href: "https://apps.samsung.com/appquery/appDetail.as?appId=com.samsung.android.authfw&amp;cld=000004009606",
-    imgSrc: "https://www.berbotoss.com/data/pass.jpg",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735692289/pass_40x40_jmcwuc.webp",
     alt: "Samsung Pass",
     name: "Samsung Pass"
   },
@@ -180,25 +180,25 @@
   },
   {
     href: "intent://com.sec.android.app.modemui.activities.USB.settings/#Intent;scheme=android-app;end",
-    imgSrc: "https://frpbypass.io/wp-content/uploads/2023/03/Open-ADB-app.jpg",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735692440/Open-ADB-app_40x45_qozmdx.webp",
     alt: "ADB Settings",
     name: "Open ADB Settings"
   },
   {
     href: "intent://com.infinix.xshare/#Intent;scheme=android-app;end",
-    imgSrc: "https://easy-firmware.com/efrp/downloads/frp/images/Xshare.png",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735690896/Xshare_40x40_hs9hxp.webp",
     alt: "XShare",
     name: "Open XShare"
   },
   {
     href: "intent://com.cloudmdm.tools.cloud/#Intent;scheme=android-app;end",
-    imgSrc: "https://easy-firmware.com/efrp/downloads/frp/images/Package_Disabler.png",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735691578/Package_Disabler_1_40x40_udjbm0.webp",
     alt: "CloudMDM",
     name: "CloudMDM App"
   },
   {
     href: "intent://com.sec.android.app.hwmoduletest/#Intent;scheme=android-app;end",
-    imgSrc: "https://easy-firmware.com/efrp/downloads/frp/images/hwmoduletest.png",
+    imgSrc: "https://res.cloudinary.com/dxtvee8dt/image/upload/v1735692747/hwmoduletest_2_40x40_yq74gj.webp",
     alt: "HwModuleTest",
     name: "HwModuleTest"
   }
