@@ -34,3 +34,23 @@
         background: #005bb5;
         box-shadow: 4px 4px 6px #666;
     }
+ /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+        .download-block {
+            padding: 10vw;
+        }
+        .download-button {
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .download-block {
+            padding: 15vw;
+        }
+        .download-button {
+            font-size: 0.9rem;
+            padding: 0.6rem 1.2rem;
+        }
+    }
