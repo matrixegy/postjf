@@ -38,7 +38,7 @@
     font-size: 1.3rem;
     font-weight: bold;
     color: #ffffff;
-    background-color: #007bff;
+    background-color: #333333;
     padding: 10px;
     border-radius: 5px;
     display: inline-block;
@@ -46,7 +46,10 @@
 }
 
 .password span {
-    color: #ffdd57;
+    color: #000000; /* نص أسود */
+  background-color: #ffff00; /* خلفية صفراء */
+  padding: 5px;
+  font-size: 16px;
 }
 
  /* Media Queries for responsiveness */
