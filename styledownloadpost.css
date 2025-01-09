@@ -17,23 +17,24 @@
         align-items: center;
     }
     .download-button {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: #fff;
-        text-decoration: none;
-        background: #0078d7;
-        border-radius: 5px;
-        box-shadow: 2px 2px 4px #999;
-        transition: 0.3s ease-in-out;
-        margin-top: 15px;
-        cursor: pointer;
-    }
-    .download-button:hover {
-        background: #005bb5;
-        box-shadow: 4px 4px 6px #666;
-    }
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff; /* اللون الأبيض للنص */
+    text-decoration: none;
+    background: #005bb5; /* لون خلفية أزرق داكن */
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #999;
+    transition: 0.3s ease-in-out;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    background: #004080; /* تدرج أغمق عند التمرير */
+    box-shadow: 4px 4px 6px #666;
+}
 .password {
     font-size: 1.3rem;
     font-weight: bold;
