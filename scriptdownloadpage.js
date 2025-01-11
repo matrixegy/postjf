@@ -1,4 +1,4 @@
-    // تحديد عنصر الأنيميشن
+// تحديد عنصر الأنيميشن
     const animationContainer = document.getElementById("animation-container");
 
     // تشغيل Lottie animation
@@ -17,8 +17,8 @@
 
     // الرسائل النهائية (بعد انتهاء العد التنازلي)
     const finalMessages = [
-        "✔️ تم فحص وتحضير الروابط بنجاح. يمكنك الآن التحميل!", 
-        "✔️ Links prepared successfully! You can now download."
+        "✔️ تم فحص وتحضير الروابط بنجاح بالاسفل. يمكنك الآن التحميل!", 
+        "✔️ The links have been successfully checked and prepared. You can now download!"
     ];
     let finalMessageIndex = 0;
 
@@ -27,7 +27,7 @@
         messageInterval = setInterval(() => {
             messageIndex = (messageIndex + 1) % messages.length;
             document.getElementById("loading-message").textContent = messages[messageIndex];
-        }, 10000); // تغيير الرسالة كل 10 ثوان
+        }, 3000); // تغيير الرسالة كل 3 ثوان
     }
 
     // وظيفة تبديل الرسائل النهائية
@@ -55,36 +55,94 @@
         timerElement.textContent = countdownText;
     }
 
-    function startTimer() {
-        countdownInterval = setInterval(() => {
-            if (!paused) {
-                countdown -= 1;
-                updateTimerDisplay();
+   // تحديث الكود بعد إتمام العد التنازلي
+function startFinalMessageRotation() {
+    setInterval(() => {
+        finalMessageIndex = (finalMessageIndex + 1) % finalMessages.length;
+        document.getElementById("loading-message").textContent = finalMessages[finalMessageIndex];
+    }, 3000); // تغيير الرسالة النهائية كل 3 ثوان
+}
 
-                if (countdown <= 0) {
-                    clearInterval(countdownInterval);
-                    timerElement.style.display = "none";
-                    linksContent.style.display = "block";
+// عند إتمام العد التنازلي
+function startTimer() {
+    countdownInterval = setInterval(() => {
+        if (!paused) {
+            countdown -= 1;
+            updateTimerDisplay();
 
-                    // تغيير الأنيميشن إلى أنيميشن بعد التحميل
-                    animation.destroy();
-                    animation = lottie.loadAnimation({
-                        container: animationContainer,
-                        renderer: "svg",
-                        loop: false,
-                        autoplay: true,
-                        path: "https://assets2.lottiefiles.com/packages/lf20_zqmsfemx.json" // رابط الأنيميشن بعد التحميل
-                    });
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                timerElement.style.display = "none";
+                linksContent.style.display = "block";
 
-                    // إيقاف تبديل الرسائل المؤقتة
-                    clearInterval(messageInterval);
+                // تغيير الأنيميشن إلى أنيميشن بعد التحميل
+                animation.destroy();
+                animation = lottie.loadAnimation({
+                    container: animationContainer,
+                    renderer: "svg",
+                    loop: false,
+                    autoplay: true,
+                    path: "https://assets2.lottiefiles.com/packages/lf20_zqmsfemx.json" // رابط الأنيميشن بعد التحميل
+                });
 
-                    // بدء تبديل الرسائل النهائية
-                    startFinalMessageRotation();
-                }
+                // إيقاف تبديل الرسائل المؤقتة
+                clearInterval(messageInterval);
+
+                // بدء تبديل الرسائل النهائية
+                startFinalMessageRotation();
+
+                // تمرير تلقائي إلى مكان الروابط
+                linksContent.scrollIntoView({ behavior: "smooth" });
+
+                // إضافة الرسالة بعد الروابط
+                const supportMessage = `
+                <div class="wp-block-buttons" style="align-items: center; display: flex; gap: 10px; justify-content: center;">
+                    <p class="has-text-align-center">
+                        <i><b><mark class="has-inline-color has-nv-c-1-color" style="background-color: rgba(0, 0, 0, 0);">
+                            Your support means the world to me! Whether it's by sharing, subscribing, watching ads, or contributing in any way – every little bit helps me create more content. Thank you for being part of this journey! ❤️
+                        </mark></b></i>
+                    </p>
+                </div>
+
+                <!-- الروابط الاجتماعية -->
+                <div class="wp-block-buttons" style="align-items: center; display: flex; gap: 10px; justify-content: center;">
+                    <!--Facebook Icon Button-->
+                    <div class="wp-block-button has-custom-font-size has-medium-font-size">
+                        <a class="wp-block-button__link has-neve-link-hover-color-background-color has-background wp-element-button" href="https://www.facebook.com/matrixegybest1/" rel="noopener noreferrer" style="border-radius: 32px; border-style: none; border-width: 0px; padding: var(--wp--preset--spacing--20);" target="_blank">
+                            <i class="fab fa-facebook" style="font-size: 30px;"></i>
+                        </a>
+                    </div>
+
+                    <!--Website Icon Button-->
+                    <div class="wp-block-button has-custom-font-size has-medium-font-size">
+                        <a class="wp-block-button__link has-nv-c-1-background-color has-background wp-element-button" href="http://mxegytech.rf.gd" rel="noopener noreferrer" style="border-radius: 32px; border-style: none; border-width: 0px; padding: var(--wp--preset--spacing--20);" target="_blank">
+                            <i class="fas fa-globe" style="font-size: 30px;"></i>
+                        </a>
+                    </div>
+
+                    <!--YouTube Icon Button-->
+                    <div class="wp-block-button has-custom-font-size has-medium-font-size">
+                        <a class="wp-block-button__link has-nv-c-2-background-color has-background wp-element-button" href="https://www.youtube.com/@MxEgyFRP" rel="noopener noreferrer" style="border-radius: 33px; padding: var(--wp--preset--spacing--20);" target="_blank">
+                            <i class="fab fa-youtube" style="font-size: 30px;"></i>
+                        </a>
+                    </div>
+
+                    <!--Buy Me a Coffee Button-->
+                    <div class="wp-block-button has-custom-font-size has-medium-font-size">
+                        <a href="https://buymeacoffee.com/mustaphaquraa" rel="noopener noreferrer" target="_blank">
+                            <img alt="Buy Me A Coffee" decoding="async" height="50" loading="lazy" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" style="border-radius: 32px;" width="200" />
+                        </a>
+                    </div>
+                </div>
+                `;
+                // إضافة النص والأزرار بعد الروابط
+                linksContent.insertAdjacentHTML("beforebegin", supportMessage);
             }
-        }, 1000);
-    }
+        }
+    }, 1000);
+}
+
+
 
     // التعامل مع حالة الصفحة
     document.addEventListener('visibilitychange', function () {
