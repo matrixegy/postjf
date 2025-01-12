@@ -4,6 +4,12 @@ const socialLinks = [
     "https://x.com/MatrixEgyFRP",
     "https://www.instagram.com/matrix_egy/",
     "https://www.youtube.com/@MxEgyFRP"
+    "https://mxegytech.rf.gd"
+"https://mxegytech.rf.gd/topics/free-unlocking-tools-for-pc-and-mobile-services/"
+"https://mxegytech.rf.gd/topics/free-mobile-repair-guides-for-mobile-services/"
+"https://mxegytech.rf.gd/top-free-mobile-repair-tools/"
+"https://mxegytech.rf.gd/frp-bypass-google-account-solution/"
+"https://mxegytech.rf.gd/expert-mobile-and-computer-repair-services/"
 ];
 
 // وظيفة لاختيار رابط عشوائي
