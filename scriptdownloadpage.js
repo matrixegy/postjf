@@ -225,7 +225,7 @@ animation = lottie.loadAnimation({
 // ضبط السرعة
 animation.addEventListener('DOMLoaded', function () {
     const originalDuration = animation.getDuration(true); // مدة الأنيميشن الأصلية بالثواني
-    const desiredDuration = 30; // المدة المرغوبة بالثواني
+    const desiredDuration = 60; // المدة المرغوبة بالثواني
     const speed = originalDuration / desiredDuration; // حساب السرعة المطلوبة
         animation.setSpeed(speed);
 });
