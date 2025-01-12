@@ -207,14 +207,33 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchLinks();
 });
 
-// عند الضغط على زر البدء
+const dynamicMessage = document.getElementById("dynamic-message");
+let messageIndex = 0;
+
+// رسائل عربية وإنجليزية
+const dynamicMessages = [
+    "اضغط لتوليد وفحص الرابط...", // الرسالة بالعربية
+    "Click to generate and check the link..." // الرسالة بالإنجليزية
+];
+
+// تغيير الرسالة بين العربية والإنجليزية
+function startDynamicMessageRotation() {
+    setInterval(() => {
+        messageIndex = (messageIndex + 1) % dynamicMessages.length;
+        dynamicMessage.textContent = dynamicMessages[messageIndex];
+    }, 3000); // تغيير الرسالة كل 3 ثواني
+}
+
+// عند الضغط على زر "Start"
 startButton.addEventListener("click", function () {
     startButton.style.display = "none";  // إخفاء الزر بعد الضغط
+    dynamicMessage.style.display = "none";  // إخفاء الرسالة المتغيرة بعد الضغط على الزر
+
     updateTimerDisplay();
     startTimer();
 
-    // إظهار الرسالة عند الضغط على زر "Start"
-    document.getElementById("loading-message").style.display = "block"; 
+    // إظهار الرسالة الخاصة بالتحضير
+    document.getElementById("loading-message").style.display = "block";
 
     // إخفاء الأنيميشن الحالي وتحديد الحجم الجديد
     animation.destroy();
@@ -229,6 +248,6 @@ startButton.addEventListener("click", function () {
         path: "https://lottie.host/61ee45f9-a98c-4a40-bebc-ad3939c142ba/VKcaLOW6JV.json"
     });
 
-    // تشغيل الرسائل المتحركة
+    // بدء الرسائل المتغيرة
     startMessageRotation();
 });
