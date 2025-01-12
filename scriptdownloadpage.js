@@ -232,4 +232,3 @@ startButton.addEventListener("click", function () {
     // تشغيل الرسائل المتحركة
     startMessageRotation();
 });
-});
