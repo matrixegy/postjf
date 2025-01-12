@@ -78,6 +78,14 @@
             cursor: pointer;
             transition: background 0.3s ease;
         }
+#dynamic-message {
+    display: block;  /* سيظهر قبل الضغط على الزر */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
 
         #start-button:hover {
             background-color: #c0392b;
