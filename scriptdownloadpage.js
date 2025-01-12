@@ -100,11 +100,6 @@ function startTimer() {
                 timerElement.style.display = "none";
                 linksContent.style.display = "block";
 
-                // تغيير الأنيميشن إلى أنيميشن بعد التحميل
-                const animationContainer = document.getElementById("animation-container");
-animationContainer.style.width = "500px"; // العرض المطلوب
-animationContainer.style.height = "500px"; // الارتفاع المطلوب
-
 animation.destroy();
 animation = lottie.loadAnimation({
     container: animationContainer,
