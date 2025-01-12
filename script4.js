@@ -1,49 +1,8 @@
-// Facade Class for Lazy Loading YouTube Playlists
-class YouTubeFacade {
-    constructor() {
-        this.apiLoaded = false;
-        this.loadYouTubeAPI();
-    }
-
-    loadYouTubeAPI() {
-        if (!this.apiLoaded) {
-            const script = document.createElement('script');
-            script.src = 'https://www.youtube.com/iframe_api';
-            script.onload = () => {
-                this.apiLoaded = true;
-            };
-            document.body.appendChild(script);
-        }
-    }
-
-    createPlaylistEmbed(containerId, playlistId, options = {}) {
-        const container = document.getElementById(containerId);
-        if (!container) {
-            console.error(`Container with ID "${containerId}" not found.`);
-            return;
-        }
-
-        // Remove the loader or placeholder
-        container.innerHTML = '';
-
-        // Create the iframe
-        const iframe = document.createElement('iframe');
-        iframe.width = options.width || '800';
-        iframe.height = options.height || '450';
-        iframe.src = `https://www.youtube.com/embed/videoseries?list=${playlistId}&autoplay=${options.autoplay || 0}`;
-        iframe.frameBorder = '0';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-
-        container.appendChild(iframe);
-    }
-}
-
-// Initialize the Facade
-const youtubeFacade = new YouTubeFacade();
-
-// HTML Content
-const htmlContent = `
+class YouTubeFacade{constructor(){this.apiLoaded=!1;this.loadYouTubeAPI()}
+loadYouTubeAPI(){if(!this.apiLoaded){const script=document.createElement('script');script.src='https://www.youtube.com/iframe_api';script.onload=()=>{this.apiLoaded=!0};document.body.appendChild(script)}}
+createPlaylistEmbed(containerId,playlistId,options={}){const container=document.getElementById(containerId);if(!container){console.error(`Container with ID "${containerId}" not found.`);return}
+container.innerHTML='';const iframe=document.createElement('iframe');iframe.width=options.width||'800';iframe.height=options.height||'450';iframe.src=`https://www.youtube.com/embed/videoseries?list=${playlistId}&autoplay=${options.autoplay || 0}`;iframe.frameBorder='0';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=!0;container.appendChild(iframe)}}
+const youtubeFacade=new YouTubeFacade();const htmlContent=`
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
         <p class="call-to-action" style="text-align: center;">
             💡 LIKE, COMMENT, and SUBSCRIBE for more helpful tutorials!
@@ -58,11 +17,7 @@ const htmlContent = `
             <div class="loader"></div>
         </div>
     </div>
-`;
-
-// CSS for the loader (you can move this to your stylesheet)
-const style = document.createElement('style');
-style.textContent = `
+`;const style=document.createElement('style');style.textContent=`
     .loader {
         border: 6px solid #f3f3f3;
         border-top: 6px solid #3498db;
@@ -76,53 +31,4 @@ style.textContent = `
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
-`;
-document.head.appendChild(style);
-
-// Inject HTML Content
-document.addEventListener('DOMContentLoaded', function () {
-    const app = document.getElementById('app');
-    if (app) {
-        app.innerHTML = htmlContent;
-
-        // Lazy Loading Observer
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const container = entry.target;
-                    const playlistId = container.getAttribute('data-playlist-id');
-                    const containerId = container.id;
-
-                    // Create YouTube Playlist Embed
-                    youtubeFacade.createPlaylistEmbed(containerId, playlistId);
-
-                    // Stop observing after loading
-                    observer.unobserve(container);
-                }
-            });
-        }, { threshold: 0.4 }); // Load when 50% visible
-
-        // Observe all playlist containers
-        document.querySelectorAll('[data-playlist-id]').forEach((element) => {
-            observer.observe(element);
-        });
-    }
-});
-
-// Second Functionality for Click-based Embedding
-document.addEventListener('DOMContentLoaded', function () {
-    const facades = document.querySelectorAll('.youtube-facade');
-    facades.forEach(function (facade) {
-        facade.addEventListener('click', function () {
-            const embedCode = facade.getAttribute('data-embed');
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube.com/embed/${embedCode}?autoplay=1`;
-            iframe.width = '100%';
-            iframe.height = '360';
-            iframe.allow = 'autoplay; encrypted-media';
-            iframe.frameBorder = '0';
-            facade.innerHTML = '';
-            facade.appendChild(iframe);
-        });
-    });
-});
+`;document.head.appendChild(style);document.addEventListener('DOMContentLoaded',function(){const app=document.getElementById('app');if(app){app.innerHTML=htmlContent;const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){const container=entry.target;const playlistId=container.getAttribute('data-playlist-id');const containerId=container.id;youtubeFacade.createPlaylistEmbed(containerId,playlistId);observer.unobserve(container)}})},{threshold:0.4});document.querySelectorAll('[data-playlist-id]').forEach((element)=>{observer.observe(element)})}});document.addEventListener('DOMContentLoaded',function(){const facades=document.querySelectorAll('.youtube-facade');facades.forEach(function(facade){facade.addEventListener('click',function(){const embedCode=facade.getAttribute('data-embed');const iframe=document.createElement('iframe');iframe.src=`https://www.youtube.com/embed/${embedCode}?autoplay=1`;iframe.width='100%';iframe.height='360';iframe.allow='autoplay; encrypted-media';iframe.frameBorder='0';facade.innerHTML='';facade.appendChild(iframe)})})})
