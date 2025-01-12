@@ -229,3 +229,4 @@ animation.addEventListener('DOMLoaded', function () {
     const speed = originalDuration / desiredDuration; // حساب السرعة المطلوبة
     animation.setSpeed(1 / speed); // تعديل السرعة لعرض الأنيميشن أبطأ
 });
+});
