@@ -251,3 +251,4 @@ startButton.addEventListener("click", function () {
     // بدء الرسائل المتغيرة
     startMessageRotation();
 });
+});
