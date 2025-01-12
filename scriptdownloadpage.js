@@ -40,7 +40,7 @@ let animation = lottie.loadAnimation({
     renderer: "svg",
     loop: true,
     autoplay: true,
-    path: "https://lottie.host/6f12c02e-d7a7-461f-8ef7-e7f6ecd35947/TOFn0ou2St.json" // رابط الأنيميشن الأول
+    path: "https://lottie.host/c11dbcb8-4618-4040-870e-2fbb448f1ebf/PEZycEzXgA.json" // رابط الأنيميشن الأول
 });
 
 // الرسائل المؤقتة (أثناء العد التنازلي)
