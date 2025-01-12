@@ -40,7 +40,7 @@ let animation = lottie.loadAnimation({
     renderer: "svg",
     loop: true,
     autoplay: true,
-    path: "https://assets2.lottiefiles.com/datafiles/jQOi6i5dHOY4uP3/data.json" // رابط الأنيميشن الأول
+    path: "https://lottie.host/6f12c02e-d7a7-461f-8ef7-e7f6ecd35947/TOFn0ou2St.json" // رابط الأنيميشن الأول
 });
 
 // الرسائل المؤقتة (أثناء العد التنازلي)
@@ -219,7 +219,7 @@ animation = lottie.loadAnimation({
     renderer: "svg",
     loop: true,
     autoplay: true,
-    path: "https://lottie.host/96e3fa15-f55f-46b3-81b8-bf3e6928aec7/ZkTazAsMkN.json" // رابط الأنيميشن العد التنازلي
+    path: "https://lottie.host/61b56efa-48fb-448f-b061-b8e5de76be22/VK5hZN0Fua.json" // رابط الأنيميشن العد التنازلي
 });
 
 // ضبط السرعة
