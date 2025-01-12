@@ -208,20 +208,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 startButton.addEventListener("click", function () {
-    // إخفاء الرسالة قبل الضغط على الزر
-    document.getElementById("pre-start-message").style.display = "none";
-    
-    // إخفاء الزر بعد الضغط
-    startButton.style.display = "none";
-    
-    // تحديث العد التنازلي
+    startButton.style.display = "none";  // إخفاء الزر بعد الضغط
+        document.getElementById("pre-start-message").style.display = "none";
     updateTimerDisplay();
     startTimer();
 
-    // إظهار الرسالة المتغيرة عند الضغط على زر "Start"
+    // إظهار الرسالة عند الضغط على زر "Start"
     document.getElementById("loading-message").style.display = "block"; 
-    
-    // تغيير حجم الأنيميشن الحالي
+
+    // إخفاء الأنيميشن الحالي وتحديد الحجم الجديد
     animation.destroy();
     animationContainer.style.width = "200px";  // قم بتغيير الحجم كما تريد
     animationContainer.style.height = "200px"; // قم بتغيير الحجم كما تريد
@@ -237,4 +232,4 @@ startButton.addEventListener("click", function () {
     // تشغيل الرسائل المتحركة
     startMessageRotation();
 });
-});
+
