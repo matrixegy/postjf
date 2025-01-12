@@ -149,7 +149,7 @@ function startTimer() {
         paused = document.hidden;
     });
 
-    // تحديد الروابط الاجتماعية
+   // تحديد الروابط الاجتماعية
 const socialLinks = [
     "https://www.facebook.com/matrixegybest1/",
     "https://x.com/MatrixEgyFRP",
@@ -181,15 +181,14 @@ async function fetchLinks() {
             // إضافة مستمعات الحدث على الروابط
             document.querySelectorAll(".link-item").forEach(link => {
                 link.addEventListener("click", function(event) {
-                    // منع الرابط من الفتح مباشرة
-                    event.preventDefault();
-                    
                     // فتح الرابط العشوائي أولاً
                     const randomLink = getRandomSocialLink();
                     window.open(randomLink, "_blank");
 
-                    // ثم فتح الرابط الأصلي
-                    window.open(event.target.href, "_blank");
+                    // السماح بفتح الرابط الأساسي بعد فتح الرابط العشوائي
+                    setTimeout(() => {
+                        window.open(event.target.href, "_blank");
+                    }, 500); // تأخير بسيط بين فتح الرابطين
                 });
             });
         } else {
@@ -206,6 +205,7 @@ function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
+
 
 
     // عند تحميل الصفحة
