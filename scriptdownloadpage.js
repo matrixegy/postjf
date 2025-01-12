@@ -213,11 +213,14 @@ startButton.addEventListener("click", function () {
     startTimer();
 
 animation.destroy();
-    animation = lottie.loadAnimation({
-        container: animationContainer,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "https://lottie.host/61ee45f9-a98c-4a40-bebc-ad3939c142ba/VKcaLOW6JV.json" // رابط الأنيميشن العد التنازلي
-    });
+animation = lottie.loadAnimation({
+    container: animationContainer,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "https://lottie.host/61ee45f9-a98c-4a40-bebc-ad3939c142ba/VKcaLOW6JV.json",
+    rendererSettings: {
+        preserveAspectRatio: "xMidYMid meet", // يمكن تعديل هذه القيمة حسب الحاجة
+        scaleMode: "stretch" // أو "zoom" حسب الحاجة لتكبير الأنيميشن
+    }
 });
