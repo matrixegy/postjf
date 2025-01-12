@@ -209,6 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 startButton.addEventListener("click", function () {
     startButton.style.display = "none";  // إخفاء الزر بعد الضغط
+            document.getElementById("pre-start-message").style.display = "none";
     updateTimerDisplay();
     startTimer();
 
@@ -217,8 +218,8 @@ startButton.addEventListener("click", function () {
 
     // إخفاء الأنيميشن الحالي وتحديد الحجم الجديد
     animation.destroy();
-    animationContainer.style.width = "200px";  // قم بتغيير الحجم كما تريد
-    animationContainer.style.height = "200px"; // قم بتغيير الحجم كما تريد
+    animationContainer.style.width = "300px";  // قم بتغيير الحجم كما تريد
+    animationContainer.style.height = "300px"; // قم بتغيير الحجم كما تريد
 
     animation = lottie.loadAnimation({
         container: animationContainer,
