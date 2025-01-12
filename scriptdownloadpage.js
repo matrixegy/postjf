@@ -213,15 +213,14 @@ startButton.addEventListener("click", function () {
     startTimer();
 
 animation.destroy();
+animationContainer.style.width = "500px";  // قم بتغيير الحجم كما تريد
+animationContainer.style.height = "500px"; // قم بتغيير الحجم كما تريد
+
 animation = lottie.loadAnimation({
     container: animationContainer,
     renderer: "svg",
     loop: true,
     autoplay: true,
-    path: "https://lottie.host/61ee45f9-a98c-4a40-bebc-ad3939c142ba/VKcaLOW6JV.json",
-    rendererSettings: {
-        preserveAspectRatio: "xMidYMid meet", // يمكن تعديل هذه القيمة حسب الحاجة
-        scaleMode: "stretch" // أو "zoom" حسب الحاجة لتكبير الأنيميشن
-    }
+    path: "https://lottie.host/61ee45f9-a98c-4a40-bebc-ad3939c142ba/VKcaLOW6JV.json"
 });
 });
