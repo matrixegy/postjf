@@ -209,19 +209,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // عند الضغط على زر البدء
 startButton.addEventListener("click", function () {
-    startButton.style.display = "none";
+    startButton.style.display = "none";  // إخفاء الزر بعد الضغط
     updateTimerDisplay();
     startTimer();
 
-animation.destroy();
-animationContainer.style.width = "200px";  // قم بتغيير الحجم كما تريد
-animationContainer.style.height = "200px"; // قم بتغيير الحجم كما تريد
+    // إظهار الرسالة عند الضغط على زر "Start"
+    document.getElementById("loading-message").style.display = "block"; 
 
-animation = lottie.loadAnimation({
-    container: animationContainer,
-    renderer: "svg",
-    loop: true,
-    autoplay: true,
-    path: "https://lottie.host/61ee45f9-a98c-4a40-bebc-ad3939c142ba/VKcaLOW6JV.json"
+    // إخفاء الأنيميشن الحالي وتحديد الحجم الجديد
+    animation.destroy();
+    animationContainer.style.width = "200px";  // قم بتغيير الحجم كما تريد
+    animationContainer.style.height = "200px"; // قم بتغيير الحجم كما تريد
+
+    animation = lottie.loadAnimation({
+        container: animationContainer,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "https://lottie.host/61ee45f9-a98c-4a40-bebc-ad3939c142ba/VKcaLOW6JV.json"
+    });
+
+    // تشغيل الرسائل المتحركة
+    startMessageRotation();
 });
 });
