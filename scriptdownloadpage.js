@@ -224,3 +224,4 @@ animation = lottie.loadAnimation({
         scaleMode: "stretch" // أو "zoom" حسب الحاجة لتكبير الأنيميشن
     }
 });
+});
