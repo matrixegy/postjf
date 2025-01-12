@@ -40,7 +40,7 @@ let animation = lottie.loadAnimation({
     renderer: "svg",
     loop: true,
     autoplay: true,
-    path: "https://lottie.host/c11dbcb8-4618-4040-870e-2fbb448f1ebf/PEZycEzXgA.json" // رابط الأنيميشن الأول
+    path: "https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json" // رابط الأنيميشن الأول
 });
 
 // الرسائل المؤقتة (أثناء العد التنازلي)
@@ -107,7 +107,7 @@ function startTimer() {
                     renderer: "svg",
                     loop: false,
                     autoplay: true,
-                    path: "https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json" // رابط الأنيميشن بعد التحميل
+                    path: "https://lottie.host/c11dbcb8-4618-4040-870e-2fbb448f1ebf/PEZycEzXgA.json" // رابط الأنيميشن بعد التحميل
                 });
 
                 // إيقاف تبديل الرسائل المؤقتة
@@ -227,6 +227,6 @@ animation.addEventListener('DOMLoaded', function () {
     const originalDuration = animation.getDuration(true); // مدة الأنيميشن الأصلية بالثواني
     const desiredDuration = 60; // المدة المرغوبة بالثواني
     const speed = originalDuration / desiredDuration; // حساب السرعة المطلوبة
-    animation.setSpeed(2 / speed); // تعديل السرعة لعرض الأنيميشن أبطأ
+    animation.setSpeed(3 / speed); // تعديل السرعة لعرض الأنيميشن أبطأ
 });
 });
