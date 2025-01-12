@@ -107,7 +107,7 @@ function startTimer() {
                     renderer: "svg",
                     loop: false,
                     autoplay: true,
-                    path: "https://assets2.lottiefiles.com/packages/lf20_zqmsfemx.json" // رابط الأنيميشن بعد التحميل
+                    path: "https://lottie.host/96e3fa15-f55f-46b3-81b8-bf3e6928aec7/ZkTazAsMkN.json" // رابط الأنيميشن بعد التحميل
                 });
 
                 // إيقاف تبديل الرسائل المؤقتة
