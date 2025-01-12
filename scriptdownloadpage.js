@@ -227,6 +227,6 @@ animation.addEventListener('DOMLoaded', function () {
     const originalDuration = animation.getDuration(true); // مدة الأنيميشن الأصلية بالثواني
     const desiredDuration = 60; // المدة المرغوبة بالثواني
     const speed = originalDuration / desiredDuration; // حساب السرعة المطلوبة
-    animation.setSpeed(0.5 / speed); // تعديل السرعة لعرض الأنيميشن أبطأ
+    animation.setSpeed(0.2 / speed); // تعديل السرعة لعرض الأنيميشن أبطأ
 });
 });
