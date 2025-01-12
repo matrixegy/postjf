@@ -1,3 +1,4 @@
+document.getElementById("loading-message").style.display = "none"; // إخفاء الرسالة عند تحميل الصفحة
 // تحديد الروابط الاجتماعية
 const socialLinks = [
     "https://www.facebook.com/matrixegybest1/",
