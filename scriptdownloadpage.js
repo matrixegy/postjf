@@ -149,34 +149,64 @@ function startTimer() {
         paused = document.hidden;
     });
 
-    // تحميل بيانات الروابط من ملف JSON
-    async function fetchLinks() {
-        try {
-            const response = await fetch('https://matrixegy.github.io/postjf/new.json'); // رابط الملف JSON
-            const data = await response.json();
+    // تحديد الروابط الاجتماعية
+const socialLinks = [
+    "https://www.facebook.com/matrixegybest1/",
+    "https://x.com/MatrixEgyFRP",
+    "https://www.instagram.com/matrix_egy/",
+    "https://www.youtube.com/@MxEgyFRP"
+];
 
-            const postId = getQueryParam("post_id");
-            if (postId && data[postId]) {
-                let linksHTML = "<ul>";
-                data[postId].forEach(link => {
-                    linksHTML += `<li><a href="${link.url}" target="_blank">${link.name}</a></li>`;
+// وظيفة لاختيار رابط عشوائي
+function getRandomSocialLink() {
+    const randomIndex = Math.floor(Math.random() * socialLinks.length);
+    return socialLinks[randomIndex];
+}
+
+// عند الضغط على أي رابط في الروابط التي تم تحميلها من ملف JSON
+async function fetchLinks() {
+    try {
+        const response = await fetch('https://matrixegy.github.io/postjf/new.json'); // رابط الملف JSON
+        const data = await response.json();
+
+        const postId = getQueryParam("post_id");
+        if (postId && data[postId]) {
+            let linksHTML = "<ul>";
+            data[postId].forEach(link => {
+                linksHTML += `<li><a href="${link.url}" target="_blank" class="link-item">${link.name}</a></li>`;
+            });
+            linksHTML += "</ul>";
+            linksContent.innerHTML = linksHTML;
+
+            // إضافة مستمعات الحدث على الروابط
+            document.querySelectorAll(".link-item").forEach(link => {
+                link.addEventListener("click", function(event) {
+                    // منع الرابط من الفتح مباشرة
+                    event.preventDefault();
+                    
+                    // فتح الرابط العشوائي أولاً
+                    const randomLink = getRandomSocialLink();
+                    window.open(randomLink, "_blank");
+
+                    // ثم فتح الرابط الأصلي
+                    window.open(event.target.href, "_blank");
                 });
-                linksHTML += "</ul>";
-                linksContent.innerHTML = linksHTML;
-            } else {
-                linksContent.innerHTML = "<p>لم يتم العثور على روابط لهذه المقالة.</p>";
-            }
-        } catch (error) {
-            console.error("Error fetching links:", error);
-            linksContent.innerHTML = "<p>⚠️ عذرًا، حدث خطأ أثناء تحميل الروابط. يرجى المحاولة لاحقًا.</p>";
+            });
+        } else {
+            linksContent.innerHTML = "<p>لم يتم العثور على روابط لهذه المقالة.</p>";
         }
+    } catch (error) {
+        console.error("Error fetching links:", error);
+        linksContent.innerHTML = "<p>⚠️ عذرًا، حدث خطأ أثناء تحميل الروابط. يرجى المحاولة لاحقًا.</p>";
     }
+}
 
-    // جلب المعاملات من URL
-    function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-    }
+// جلب المعاملات من URL
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
 
     // عند تحميل الصفحة
     document.addEventListener("DOMContentLoaded", function () {
