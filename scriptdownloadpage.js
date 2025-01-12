@@ -101,14 +101,18 @@ function startTimer() {
                 linksContent.style.display = "block";
 
                 // تغيير الأنيميشن إلى أنيميشن بعد التحميل
-                animation.destroy();
-                animation = lottie.loadAnimation({
-                    container: animationContainer,
-                    renderer: "svg",
-                    loop: false,
-                    autoplay: true,
-                    path: "https://lottie.host/c11dbcb8-4618-4040-870e-2fbb448f1ebf/PEZycEzXgA.json" // رابط الأنيميشن بعد التحميل
-                });
+                const animationContainer = document.getElementById("animation-container");
+animationContainer.style.width = "500px"; // العرض المطلوب
+animationContainer.style.height = "500px"; // الارتفاع المطلوب
+
+animation.destroy();
+animation = lottie.loadAnimation({
+    container: animationContainer,
+    renderer: "svg",
+    loop: false,
+    autoplay: true,
+    path: "https://lottie.host/c11dbcb8-4618-4040-870e-2fbb448f1ebf/PEZycEzXgA.json" // رابط الأنيميشن بعد التحميل
+});
 
                 // إيقاف تبديل الرسائل المؤقتة
                 clearInterval(messageInterval);
