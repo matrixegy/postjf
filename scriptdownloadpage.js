@@ -149,90 +149,54 @@ function startTimer() {
         paused = document.hidden;
     });
 
-    // تحديد الروابط الاجتماعية
-const socialLinks = [
-    "https://www.facebook.com/matrixegybest1/",
-    "https://x.com/MatrixEgyFRP",
-    "https://www.instagram.com/matrix_egy/",
-    "https://www.youtube.com/@MxEgyFRP"
-];
+    // تحميل بيانات الروابط من ملف JSON
+    async function fetchLinks() {
+        try {
+            const response = await fetch('https://matrixegy.github.io/postjf/new.json'); // رابط الملف JSON
+            const data = await response.json();
 
-// وظيفة لاختيار رابط عشوائي
-function getRandomSocialLink() {
-    const randomIndex = Math.floor(Math.random() * socialLinks.length);
-    return socialLinks[randomIndex];
-}
-
-// وظيفة لتحميل الروابط من JSON وتعديل الروابط
-async function fetchLinks() {
-    try {
-        const response = await fetch('https://matrixegy.github.io/postjf/new.json'); // رابط الملف JSON
-        const data = await response.json();
-
-        const postId = getQueryParam("post_id");
-        if (postId && data[postId]) {
-            let linksHTML = "<ul>";
-            data[postId].forEach(link => {
-                // إضافة رابط عشوائي عند الضغط على الرابط
-                linksHTML += `
-                    <li>
-                        <a href="${link.url}" target="_blank" class="link-item">${link.name}</a>
-                    </li>
-                `;
-            });
-            linksHTML += "</ul>";
-            linksContent.innerHTML = linksHTML;
-
-            // إضافة وظيفة لاختيار رابط عشوائي عند الضغط على الرابط
-            const linkItems = document.querySelectorAll(".link-item");
-            linkItems.forEach(linkItem => {
-                linkItem.addEventListener("click", function(event) {
-                    // اختيار الرابط العشوائي
-                    const randomLink = getRandomSocialLink();
-
-                    // فتح الرابط العشوائي في نافذة جديدة
-                    window.open(randomLink, "_blank");
-
-                    // السماح للرابط الأصلي بالفتح
-                    window.open(event.target.href, "_blank");
-
-                    // منع الانتقال التلقائي
-                    event.preventDefault();
+            const postId = getQueryParam("post_id");
+            if (postId && data[postId]) {
+                let linksHTML = "<ul>";
+                data[postId].forEach(link => {
+                    linksHTML += `<li><a href="${link.url}" target="_blank">${link.name}</a></li>`;
                 });
-            });
-        } else {
-            linksContent.innerHTML = "<p>لم يتم العثور على روابط لهذه المقالة.</p>";
+                linksHTML += "</ul>";
+                linksContent.innerHTML = linksHTML;
+            } else {
+                linksContent.innerHTML = "<p>لم يتم العثور على روابط لهذه المقالة.</p>";
+            }
+        } catch (error) {
+            console.error("Error fetching links:", error);
+            linksContent.innerHTML = "<p>⚠️ عذرًا، حدث خطأ أثناء تحميل الروابط. يرجى المحاولة لاحقًا.</p>";
         }
-    } catch (error) {
-        console.error("Error fetching links:", error);
-        linksContent.innerHTML = "<p>⚠️ عذرًا، حدث خطأ أثناء تحميل الروابط. يرجى المحاولة لاحقًا.</p>";
     }
-}
 
-// جلب المعاملات من URL
-function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
+    // جلب المعاملات من URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
 
-// عند تحميل الصفحة
-document.addEventListener("DOMContentLoaded", function () {
-    fetchLinks();
-});
-
-// عند الضغط على زر البدء
-startButton.addEventListener("click", function () {
-    startButton.style.display = "none";
-    updateTimerDisplay();
-    startTimer();
-
-    // تغيير الأنيميشن إلى العد التنازلي
-    animation.destroy();
-    animation = lottie.loadAnimation({
-        container: animationContainer,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json" // رابط الأنيميشن العد التنازلي
+    // عند تحميل الصفحة
+    document.addEventListener("DOMContentLoaded", function () {
+        startMessageRotation(); // بدء تبديل الرسائل المؤقتة
+        fetchLinks();
     });
-});
+
+    // عند الضغط على زر البدء
+    startButton.addEventListener("click", function () {
+        startButton.style.display = "none";
+        updateTimerDisplay();
+        startTimer();
+
+        // تغيير الأنيميشن إلى العد التنازلي
+        animation.destroy();
+        animation = lottie.loadAnimation({
+            container: animationContainer,
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json" // رابط الأنيميشن العد التنازلي
+        });
+    });
