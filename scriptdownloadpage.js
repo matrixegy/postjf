@@ -213,8 +213,8 @@ startButton.addEventListener("click", function () {
     startTimer();
 
 animation.destroy();
-animationContainer.style.width = "500px";  // قم بتغيير الحجم كما تريد
-animationContainer.style.height = "500px"; // قم بتغيير الحجم كما تريد
+animationContainer.style.width = "200px";  // قم بتغيير الحجم كما تريد
+animationContainer.style.height = "200px"; // قم بتغيير الحجم كما تريد
 
 animation = lottie.loadAnimation({
     container: animationContainer,
