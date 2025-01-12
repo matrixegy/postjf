@@ -209,7 +209,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 startButton.addEventListener("click", function () {
     startButton.style.display = "none";  // إخفاء الزر بعد الضغط
-        document.getElementById("pre-start-message").style.display = "none";
     updateTimerDisplay();
     startTimer();
 
