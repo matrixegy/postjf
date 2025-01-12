@@ -97,3 +97,23 @@
         #playlist-container div {
             margin: 15px 0;
         }
+/* تحسين التنسيق للأزرار */
+.wp-block-button a {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 32px;
+    text-transform: uppercase;
+}
+
+/* تحسين الخطوط والنصوص */
+.wp-block-heading {
+    font-weight: bold;
+    color: #333;
+}
+
+/* النصوص المحاطة بـ mark */
+mark {
+    padding: 5px;
+    color: #333;
+    background-color: #f9f9f9;
+}
