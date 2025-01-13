@@ -46,8 +46,11 @@ let animation = lottie.loadAnimation({
 
 // الرسائل المؤقتة (أثناء العد التنازلي)
 const messages = ["⏳ جاري تجهيز الروابط، شكراً لصبرك!",
+        "⏳ Preparing the links, thank you for your patience!",
         "✨ نعمل على إحضار أفضل تجربة لك، فقط لحظات قليلة...",
-        "🎉 شكراً لدعمك المستمر، نحن على وشك الانتهاء!"];
+        "✨ Bringing you the best experience, just a few moments...",
+        "🎉 شكراً لدعمك المستمر، نحن على وشك الانتهاء!",
+        "🎉 Thank you for your support, we're almost done!"];
 let messageIndex = 0;
 let messageInterval;
 
