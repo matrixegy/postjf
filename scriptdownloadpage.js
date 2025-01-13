@@ -57,7 +57,7 @@ let messageInterval;
 // الرسائل النهائية (بعد انتهاء العد التنازلي)
 const finalMessages = [
     "✔️ تم فحص وتحضير الروابط بنجاح بالاسفل. يمكنك الآن التحميل!", 
-    "✔️ The links have been successfully checked and prepared. You can now download!"
+    "✔️ The links have been successfully prepared and are ready below. Feel free to start your download!"
 ];
 let finalMessageIndex = 0;
 
