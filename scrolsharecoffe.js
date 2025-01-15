@@ -42,3 +42,7 @@ window.onscroll = function () {
       document.head.appendChild(link);
     });
   });
+document.querySelectorAll('a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener');
+});
