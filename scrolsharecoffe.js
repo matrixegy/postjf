@@ -1,4 +1,44 @@
-window.onscroll=function(){const scrollToTopBtn=document.getElementById('scrollToTop');if(document.body.scrollTop>200||document.documentElement.scrollTop>200){scrollToTopBtn.style.display='flex'}else{scrollToTopBtn.style.display='none'}};function scrollToTop(){window.scrollTo({top:0,behavior:'smooth',})}
-function closeBox(){document.getElementById('buymeacoffee-container').classList.add('hidden')}
-function toggleShare(){const shareContainer=document.getElementById('floating-share');shareContainer.classList.toggle('collapsed')}
-const currentUrl=window.location.href;document.querySelector('.share-facebook').href+=currentUrl;document.querySelector('.share-twitter').href+="url="+encodeURIComponent(currentUrl)+"&text=Check%20this%20out!";document.querySelector('.share-whatsapp').href+=encodeURIComponent(currentUrl);document.querySelector('.share-reddit').href+=currentUrl;document.querySelector('.share-pinterest').href+=currentUrl;document.querySelector('.share-telegram').href+="url="+encodeURIComponent(currentUrl)+"&text=Check%20this%20out!"
+window.onscroll = function () {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollToTopBtn.style.display = 'flex';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Close "Buy Me a Coffee" box
+  function closeBox() {
+    document.getElementById('buymeacoffee-container').classList.add('hidden');
+  }
+
+  // Toggle floating share container
+  function toggleShare() {
+    const shareContainer = document.getElementById('floating-share');
+    shareContainer.classList.toggle('collapsed');
+  }
+
+  // Update share links with the current URL
+  const currentUrl = window.location.href;
+  document.querySelector('.share-facebook').href += currentUrl;
+  document.querySelector('.share-twitter').href += "url=" + encodeURIComponent(currentUrl) + "&text=Check%20this%20out!";
+  document.querySelector('.share-whatsapp').href += encodeURIComponent(currentUrl);
+  document.querySelector('.share-reddit').href += currentUrl;
+  document.querySelector('.share-pinterest').href += currentUrl;
+  document.querySelector('.share-telegram').href += "url=" + encodeURIComponent(currentUrl) + "&text=Check%20this%20out!";
+
+  // Preload Cloudinary images for faster load times
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll('img[src*="res.cloudinary.com"]');
+    images.forEach(img => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = img.src;
+      document.head.appendChild(link);
+    });
+  });
