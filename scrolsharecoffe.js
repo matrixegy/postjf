@@ -1,32 +1,49 @@
-// Cookie Law Script
-cookieLaw = {
-  dId: "cookie-law-div",
-  bId: "cookie-law-button",
-  iId: "cookie-law-item",
-  show: function (e) {
-    if (localStorage.getItem(cookieLaw.iId)) return false;
-    var o = document.createElement("div"),
-      i = document.createElement("p"),
-      t = document.createElement("button");
-    i.innerHTML = e.msg;
-    t.id = cookieLaw.bId;
-    t.innerHTML = e.ok;
-    o.id = cookieLaw.dId;
-    o.appendChild(t);
-    o.appendChild(i);
-    document.body.insertBefore(o, document.body.lastChild);
-    t.addEventListener("click", cookieLaw.hide, false);
-  },
-  hide: function () {
-    document.getElementById(cookieLaw.dId).outerHTML = "";
-    localStorage.setItem(cookieLaw.iId, "1");
-  },
-};
-cookieLaw.show({
-  msg:
-    "We use cookies to give you the best possible experience. By continuing to visit our website, you agree to the use of cookies as described in our <a href='https://mxegytech.rf.gd/cookie-policy'>Cookie Policy</a>",
-  ok: "x",
-});
+  cookieLaw = {
+    dId: "cookie-law-div",
+    bId: "cookie-law-button",
+    iId: "cookie-law-item",
+    show: function (e) {
+      if (localStorage.getItem(cookieLaw.iId)) return false;
+
+      // Create container
+      const container = document.createElement("div");
+      container.id = cookieLaw.dId;
+
+      // Create message paragraph
+      const message = document.createElement("p");
+      message.innerHTML = e.msg;
+
+      // Create dismiss button
+      const button = document.createElement("button");
+      button.id = cookieLaw.bId;
+      button.innerHTML = e.ok;
+
+      // Append elements
+      container.appendChild(button);
+      container.appendChild(message);
+      document.body.insertBefore(container, document.body.lastChild);
+
+      // Add event listener to button
+      button.addEventListener("click", cookieLaw.hide, false);
+    },
+    hide: function () {
+      const cookieDiv = document.getElementById(cookieLaw.dId);
+      cookieDiv.style.transform = "translateY(100%)";
+      cookieDiv.style.opacity = "0";
+
+      setTimeout(() => {
+        cookieDiv.remove();
+        localStorage.setItem(cookieLaw.iId, "1");
+      }, 300); // Delay for animation
+    },
+  };
+
+  // Show the cookie notice
+  cookieLaw.show({
+    msg:
+      "We use cookies to give you the best possible experience. By continuing to visit our website, you agree to the use of cookies as described in our <a href='#'>Cookie Policy</a>",
+    ok: "Got it",
+  });
 
 // Scroll to Top Button Script
 window.onscroll = function () {
