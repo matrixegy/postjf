@@ -14,12 +14,17 @@ document.addEventListener('DOMContentLoaded', function () {
             switchButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // إظهار الفيديو الخاص بالسيرفر المحدد
+            // إظهار الفيديو الخاص بالسيرفر المحدد وإيقاف الفيديوهات الأخرى
             facades.forEach(facade => {
                 if (facade.classList.contains(`${selectedServer}-facade`)) {
                     facade.style.display = 'block';
                 } else {
+                    // إخفاء السيرفر الآخر وحذف iframe (لإيقاف الفيديو)
                     facade.style.display = 'none';
+                    facade.innerHTML = `
+                        <img class="video-thumbnail" src="${facade.querySelector('.video-thumbnail').src}" alt="Video Thumbnail">
+                        <div class="video-play-button"></div>
+                    `;
                 }
             });
         });
@@ -39,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             iframe.width = '100%';
-            iframe.height = '405';
+            iframe.height = '360';
             iframe.allow = 'autoplay; encrypted-media';
             iframe.frameBorder = '0';
 
