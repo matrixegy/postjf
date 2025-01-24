@@ -20,15 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     facade.style.display = 'block';
                 } else {
                     // إخفاء السيرفر الآخر وإيقاف الفيديو
-                    const embedCode = facade.getAttribute('data-embed');
-                    const thumbnailSrc = facade.querySelector('.video-thumbnail').src;
-
                     facade.style.display = 'none';
-                    facade.innerHTML = ''; // تنظيف المحتوى الداخلي
-                    facade.innerHTML = `
-                        <img class="video-thumbnail" src="${thumbnailSrc}" alt="Video Thumbnail">
-                        <div class="video-play-button"></div>
-                    `;
+                    facade.innerHTML = ''; // تنظيف المحتوى الداخلي (إيقاف الفيديو)
                 }
             });
         });
