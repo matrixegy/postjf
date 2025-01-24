@@ -20,11 +20,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     facade.style.display = 'block';
                 } else {
                     // إخفاء السيرفر الآخر وإيقاف الفيديو
+                    const embedCode = facade.getAttribute('data-embed');
+                    const thumbnailImg = facade.querySelector('.video-thumbnail');
+                    const thumbnailSrc = thumbnailImg.src;
+                    const thumbnailAlt = thumbnailImg.alt; // النص البديل للصورة
+
                     facade.style.display = 'none';
+                    facade.innerHTML = ''; // تنظيف المحتوى الداخلي
                     facade.innerHTML = `
                         <img class="video-thumbnail" src="${thumbnailSrc}" alt="${thumbnailAlt}">
                         <div class="video-play-button"></div>
-                    `; // تنظيف المحتوى الداخلي (إيقاف الفيديو)
+                    `;
                 }
             });
         });
