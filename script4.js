@@ -14,21 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
             switchButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // تنظيف جميع واجهات الفيديو
+            // إظهار الفيديو الخاص بالسيرفر المحدد
             facades.forEach(facade => {
-                facade.innerHTML = ''; // إزالة أي فيديو مشغل حاليًا
                 if (facade.classList.contains(`${selectedServer}-facade`)) {
                     facade.style.display = 'block';
-                    // إضافة الصورة والزر مرة أخرى عند التبديل
-                    const embedCode = facade.getAttribute('data-embed');
-                    const platform = facade.getAttribute('data-platform');
-                    const thumbnail = document.createElement('img');
-                    thumbnail.className = 'video-thumbnail';
-                    thumbnail.src = facade.querySelector('.video-thumbnail')?.src || '';
-                    facade.appendChild(thumbnail);
-                    const playButton = document.createElement('div');
-                    playButton.className = 'video-play-button';
-                    facade.appendChild(playButton);
                 } else {
                     facade.style.display = 'none';
                 }
@@ -50,13 +39,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             iframe.width = '100%';
-            iframe.height = '360';
+            iframe.height = '405';
             iframe.allow = 'autoplay; encrypted-media';
             iframe.frameBorder = '0';
 
-            // تنظيف محتوى الواجهة وإضافة الفيديو
-            facade.innerHTML = '';
-            facade.appendChild(iframe);
+            facade.innerHTML = ''; // تنظيف المحتوى الداخلي
+            facade.appendChild(iframe); // إضافة الإطار
         });
     });
 });
