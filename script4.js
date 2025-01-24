@@ -4,79 +4,48 @@ class YouTubeFacade{constructor(){this.apiLoaded=!1;this.loadYouTubeAPI()}loadYo
 document.addEventListener('DOMContentLoaded', function () {
     const switchButtons = document.querySelectorAll('.switch-button');
     const facades = document.querySelectorAll('.video-facade');
-    let youtubePlayer, dailymotionPlayer;
 
-    // إنشاء مشغل YouTube عند الطلب
-    function createYouTubePlayer(embedCode, container) {
-        youtubePlayer = new YT.Player(container, {
-            height: '360',
-            width: '640',
-            videoId: embedCode,
-            playerVars: {
-                autoplay: 1,
-            },
-        });
-    }
-
-    // إنشاء مشغل Dailymotion عند الطلب
-    function createDailymotionPlayer(embedCode, container) {
-        dailymotionPlayer = DM.player(container, {
-            video: embedCode,
-            width: '100%',
-            height: '360',
-            params: {
-                autoplay: 1,
-            },
-        });
-    }
-
-    // التحكم في التبديل بين السيرفرات
+    // التبديل بين السيرفرات عند النقر على الأزرار
     switchButtons.forEach(function (button) {
         button.addEventListener('click', function () {
             const selectedServer = button.getAttribute('data-server');
 
-            // تحديث الزر النشط
+            // تحديث الأزرار (تفعيل الزر المحدد فقط)
             switchButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // التعامل مع إيقاف الفيديوهات وتشغيل السيرفر المطلوب
+            // إظهار الفيديو الخاص بالسيرفر المحدد
             facades.forEach(facade => {
-                const platform = facade.getAttribute('data-platform');
-                const embedCode = facade.getAttribute('data-embed');
-                const containerId = `${platform}-player-container`;
-
                 if (facade.classList.contains(`${selectedServer}-facade`)) {
                     facade.style.display = 'block';
-                    if (platform === 'youtube' && !youtubePlayer) {
-                        createYouTubePlayer(embedCode, containerId);
-                    } else if (platform === 'dailymotion' && !dailymotionPlayer) {
-                        createDailymotionPlayer(embedCode, containerId);
-                    }
                 } else {
                     facade.style.display = 'none';
-                    if (platform === 'youtube' && youtubePlayer) {
-                        youtubePlayer.stopVideo();
-                    } else if (platform === 'dailymotion' && dailymotionPlayer) {
-                        dailymotionPlayer.pause();
-                    }
                 }
             });
         });
     });
 
-    // تشغيل الفيديو عند النقر على الواجهة
+    // تشغيل الفيديو عند النقر على واجهة الفيديو
     facades.forEach(function (facade) {
         facade.addEventListener('click', function () {
-            const platform = facade.getAttribute('data-platform');
             const embedCode = facade.getAttribute('data-embed');
-            const containerId = `${platform}-player-container`;
-
-            // إنشاء المشغل إذا لم يكن موجودًا
-            if (platform === 'youtube' && !youtubePlayer) {
-                createYouTubePlayer(embedCode, containerId);
-            } else if (platform === 'dailymotion' && !dailymotionPlayer) {
-                createDailymotionPlayer(embedCode, containerId);
+            const platform = facade.getAttribute('data-platform');
+            let iframe = document.createElement('iframe');
+            
+            if (platform === 'youtube') {
+                iframe.src = `https://www.youtube.com/embed/${embedCode}?autoplay=1`;
+            } else if (platform === 'dailymotion') {
+                iframe.src = `https://www.dailymotion.com/embed/video/${embedCode}?autoplay=1`;
             }
+
+            iframe.width = '100%';
+            iframe.height = '360';
+            iframe.allow = 'autoplay; encrypted-media';
+            iframe.frameBorder = '0';
+
+            facade.innerHTML = ''; // تنظيف المحتوى الداخلي
+            facade.appendChild(iframe); // إضافة الإطار
         });
     });
+});
 });
