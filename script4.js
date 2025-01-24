@@ -14,12 +14,16 @@ document.addEventListener('DOMContentLoaded', function () {
             switchButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // إظهار الفيديو الخاص بالسيرفر المحدد
+            // عرض السيرفر المحدد وإيقاف تشغيل الآخر
             facades.forEach(facade => {
                 if (facade.classList.contains(`${selectedServer}-facade`)) {
-                    facade.style.display = 'block';
+                    facade.style.display = 'block'; // عرض السيرفر المطلوب
                 } else {
-                    facade.style.display = 'none';
+                    facade.style.display = 'none'; // إخفاء السيرفر الآخر
+
+                    // إزالة iframe لإيقاف الفيديو
+                    const iframe = facade.querySelector('iframe');
+                    if (iframe) iframe.remove();
                 }
             });
         });
@@ -39,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             iframe.width = '100%';
-            iframe.height = '405';
+            iframe.height = '360';
             iframe.allow = 'autoplay; encrypted-media';
             iframe.frameBorder = '0';
 
