@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             iframe.width = '100%';
-            iframe.height = '360';
+            iframe.height = '405';
             iframe.allow = 'autoplay; encrypted-media';
             iframe.frameBorder = '0';
 
