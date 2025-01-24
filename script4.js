@@ -14,12 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
             switchButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // إظهار الفيديو الخاص بالسيرفر المحدد
+            // إظهار الفيديو الخاص بالسيرفر المحدد وإيقاف الفيديو في السيرفر الآخر
             facades.forEach(facade => {
                 if (facade.classList.contains(`${selectedServer}-facade`)) {
                     facade.style.display = 'block';
                 } else {
+                    // إخفاء السيرفر الآخر وإيقاف الفيديو
                     facade.style.display = 'none';
+                    facade.innerHTML = ''; // تنظيف المحتوى الداخلي (إيقاف الفيديو)
                 }
             });
         });
