@@ -21,7 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     // إخفاء السيرفر الآخر وإيقاف الفيديو
                     facade.style.display = 'none';
-                    facade.innerHTML = ''; // تنظيف المحتوى الداخلي (إيقاف الفيديو)
+                    facade.innerHTML = `
+                        <img class="video-thumbnail" src="${thumbnailSrc}" alt="${thumbnailAlt}">
+                        <div class="video-play-button"></div>
+                    `; // تنظيف المحتوى الداخلي (إيقاف الفيديو)
                 }
             });
         });
