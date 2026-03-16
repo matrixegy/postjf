@@ -87,12 +87,12 @@
         { "name": "أداة أندرويد", "url": "https://www.mfdl.io/" },
         { "name": "أداة SP Flash Tool", "url": "https://www.up-4ever.net/nlbcw6ecmz6w" }
     ],
-     "338": [
-        { "name": "Firmware Version Finder V1.3", "url": "https://www.up-4ever.net/jhpy35ijzt2q" },
-        { "name": "أداة SP Flash Tool", "url": "https://www.up-4ever.net/nlbcw6ecmz6w" }
-     ],
      "4120": [
-        { "name": "أداة أندرويد", "url": "https://www.mfdl.io/" },
+        { "name": "Firmware Version Finder V1.3", "url": "https://www.up-4ever.net/jhpy35ijzt2q" },
+        { "name": "drivers", "url": "https://www.up-4ever.net/nhguohbf1jj7" }
+     ],
+     "4123": [
+        { "name": "Auth Flash Tool V1.2", "url": "https://www.up-4ever.net/dnjpmpvn7a72" },
         { "name": "drivers", "url": "https://www.up-4ever.net/nhguohbf1jj7" }
      ],
     "4117": [
